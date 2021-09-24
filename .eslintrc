@@ -2,7 +2,7 @@
   "extends": [
     "react-app",
     "airbnb",
-    "plugin:jsx-a11y/recommended",
+    "plugin:jsx-a11y/strict",
     "prettier",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"

@@ -16,9 +16,10 @@ const StarRating: React.FC<IStarRating> = ({
             <input
               type="radio"
               name="rating"
-              onChange={(e: React.SyntheticEvent) => setRating(e)}
+              onChange={(e) => setRating(e)}
               value={adjustedValue}
-              checked={adjustedValue === ratingValue}
+              // eslint-disable-next-line eqeqeq
+              checked={adjustedValue == ratingValue}
               required
             />
             <FaStar color={adjustedValue <= ratingValue ? "#01af93" : "#bbb"} />

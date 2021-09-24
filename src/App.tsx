@@ -4,7 +4,7 @@ import FeedbackForm from "./components/FeedbackForm";
 import TrendGraph from "./components/TrendGraph";
 import { IComment } from "./interfaces";
 
-const App = () => {
+const App: React.FC = () => {
   const [comments, setComments] = useState<IComment[]>([
     {
       name: "Harry",
@@ -24,10 +24,22 @@ const App = () => {
       rating: 3,
       comment: "i love it!",
     },
+    {
+      name: "Harry",
+      email: "harry.juggins@gmail.com",
+      rating: 3,
+      comment: "i love it!",
+    },
+    {
+      name: "Harry",
+      email: "harry.juggins@gmail.com",
+      rating: 3,
+      comment: "i love it!",
+    },
   ]);
 
   const addComment = (data: IComment) => {
-    setComments((prev: any) => [...prev, data]);
+    setComments((prev) => [...prev, data]);
   };
 
   return (

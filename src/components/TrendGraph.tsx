@@ -12,7 +12,6 @@ const TrendGraph: React.FC<IComments> = ({ comments }: IComments) => (
     <XAxis dataKey="id" />
     <YAxis dataKey="rating" domain={[0, 5]} />
     <Tooltip />
-    {/* <Line type="monotone" dataKey="id" stroke="#8884d8" /> */}
     <Line type="monotone" dataKey="rating" stroke="#82ca9d" />
   </LineChart>
 );
