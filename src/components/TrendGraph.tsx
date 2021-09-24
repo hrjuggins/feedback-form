@@ -1,6 +1,6 @@
 import React from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
-import { IComments } from "../interfaces";
+import { IComments } from "../utils/interfaces";
 
 const TrendGraph: React.FC<IComments> = ({ comments }: IComments) => (
   <LineChart
@@ -9,8 +9,8 @@ const TrendGraph: React.FC<IComments> = ({ comments }: IComments) => (
     data={comments}
     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
   >
-    <XAxis dataKey="id" />
-    <YAxis dataKey="rating" domain={[0, 5]} />
+    <XAxis dataKey="id" tick={false} />
+    <YAxis dataKey="rating" ticks={[1, 2, 3, 4, 5]} />
     <Tooltip />
     <Line type="monotone" dataKey="rating" stroke="#82ca9d" />
   </LineChart>

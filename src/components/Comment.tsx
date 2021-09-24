@@ -1,5 +1,5 @@
 import React from "react";
-import { IComment } from "../interfaces";
+import { IComment } from "../utils/interfaces";
 
 const Comment: React.FC<IComment> = ({
   name,

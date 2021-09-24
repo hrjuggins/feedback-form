@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IFeedbackFormProps } from "../interfaces";
+import { IFeedbackFormProps } from "../utils/interfaces";
 import StarRating from "./StarRating";
 
 const FeedbackForm: React.FC<IFeedbackFormProps> = ({
@@ -36,6 +36,7 @@ const FeedbackForm: React.FC<IFeedbackFormProps> = ({
       <label htmlFor="name">
         Name
         <input
+          id="name"
           type="text"
           name="name"
           value={formData.name}
@@ -46,6 +47,7 @@ const FeedbackForm: React.FC<IFeedbackFormProps> = ({
       <label htmlFor="email">
         Email
         <input
+          id="email"
           type="text"
           name="email"
           value={formData.email}
@@ -60,6 +62,7 @@ const FeedbackForm: React.FC<IFeedbackFormProps> = ({
       <label htmlFor="comment">
         Comment
         <input
+          id="comment"
           type="textarea"
           name="comment"
           value={formData.comment}

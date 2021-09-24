@@ -2,41 +2,11 @@ import React, { useState } from "react";
 import Comments from "./components/Comments";
 import FeedbackForm from "./components/FeedbackForm";
 import TrendGraph from "./components/TrendGraph";
-import { IComment } from "./interfaces";
+import initialData from "./utils/initialData";
+import { IComment } from "./utils/interfaces";
 
 const App: React.FC = () => {
-  const [comments, setComments] = useState<IComment[]>([
-    {
-      name: "Harry",
-      email: "harry.juggins@gmail.com",
-      rating: 4,
-      comment: "i love it!",
-    },
-    {
-      name: "Harry",
-      email: "harry.juggins@gmail.com",
-      rating: 5,
-      comment: "i love it!",
-    },
-    {
-      name: "Harry",
-      email: "harry.juggins@gmail.com",
-      rating: 3,
-      comment: "i love it!",
-    },
-    {
-      name: "Harry",
-      email: "harry.juggins@gmail.com",
-      rating: 3,
-      comment: "i love it!",
-    },
-    {
-      name: "Harry",
-      email: "harry.juggins@gmail.com",
-      rating: 3,
-      comment: "i love it!",
-    },
-  ]);
+  const [comments, setComments] = useState<IComment[]>(initialData);
 
   const addComment = (data: IComment) => {
     setComments((prev) => [...prev, data]);
@@ -44,7 +14,7 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
-      <FeedbackForm addComment={(data) => addComment(data)} />
+      <FeedbackForm addComment={(data: IComment) => addComment(data)} />
       <TrendGraph comments={comments} />
       <Comments comments={comments} />
     </div>

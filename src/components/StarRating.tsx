@@ -1,6 +1,6 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
-import { IStarRating } from "../interfaces";
+import { IStarRating } from "../utils/interfaces";
 
 const StarRating: React.FC<IStarRating> = ({
   ratingValue,
@@ -14,6 +14,7 @@ const StarRating: React.FC<IStarRating> = ({
         return (
           <label htmlFor="rating" key={adjustedValue}>
             <input
+              id="rating"
               type="radio"
               name="rating"
               onChange={(e) => setRating(e)}
