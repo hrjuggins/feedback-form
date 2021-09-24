@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Comments from "./components/Comments";
+import FeedbackForm from "./components/FeedbackForm";
+import TrendGraph from "./components/TrendGraph";
+import { IComment } from "./interfaces";
 
-function App() {
+const App = () => {
+  const [comments, setComments] = useState<IComment[]>([
+    {
+      name: "Harry",
+      email: "harry.juggins@gmail.com",
+      rating: 4,
+      comment: "i love it!",
+    },
+    {
+      name: "Harry",
+      email: "harry.juggins@gmail.com",
+      rating: 5,
+      comment: "i love it!",
+    },
+    {
+      name: "Harry",
+      email: "harry.juggins@gmail.com",
+      rating: 3,
+      comment: "i love it!",
+    },
+  ]);
+
+  const addComment = (data: IComment) => {
+    setComments((prev: any) => [...prev, data]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <FeedbackForm addComment={(data) => addComment(data)} />
+      <TrendGraph comments={comments} />
+      <Comments comments={comments} />
     </div>
   );
-}
+};
 
 export default App;
