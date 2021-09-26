@@ -32,47 +32,45 @@ const FeedbackForm: React.FC<IFeedbackFormProps> = ({
   };
 
   return (
-    <form onSubmit={handleFormSubmit} data-testid="form">
-      <label htmlFor="name">
-        Name
-        <input
-          id="name"
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={(e) => handleFormInput(e)}
-          required
-          data-testid="name-input"
-        />
-      </label>
-      <label htmlFor="email">
-        Email
-        <input
-          id="email"
-          type="text"
-          name="email"
-          value={formData.email}
-          onChange={(e) => handleFormInput(e)}
-          required
-          data-testid="email-input"
-        />
-      </label>
+    <form
+      onSubmit={handleFormSubmit}
+      data-testid="form"
+      className="feedback-container"
+    >
+      <input
+        aria-label="name"
+        type="text"
+        name="name"
+        placeholder="Name"
+        value={formData.name}
+        onChange={(e) => handleFormInput(e)}
+        required
+        data-testid="name-input"
+      />
+      <input
+        aria-label="email"
+        type="text"
+        name="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={(e) => handleFormInput(e)}
+        required
+        data-testid="email-input"
+      />
       <StarRating
         setRating={(e: React.SyntheticEvent) => handleFormInput(e)}
         ratingValue={formData.rating}
       />
-      <label htmlFor="message">
-        Comment
-        <input
-          id="message"
-          type="textarea"
-          name="message"
-          value={formData.message}
-          onChange={(e) => handleFormInput(e)}
-          required
-          data-testid="message-input"
-        />
-      </label>
+      <textarea
+        aria-label="message"
+        name="message"
+        placeholder="Comment"
+        rows={4}
+        value={formData.message}
+        onChange={(e) => handleFormInput(e)}
+        required
+        data-testid="message-input"
+      />
       <button type="submit" data-testid="form-submit">
         Submit
       </button>

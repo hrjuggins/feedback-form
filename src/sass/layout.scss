@@ -1,0 +1,46 @@
+$dark-grey: #32353e;
+$mid-grey: #57585c;
+$light-grey: #fbfcfe;
+$orange: #f39c05;
+
+// External library for standardising across devices
+@import "normalize";
+
+// Typography styles
+@import "modules/typography";
+@import "modules/feedback-form";
+@import "modules/star-rating";
+@import "modules/trend-graph";
+@import "modules/comments";
+
+body {
+  margin: 0;
+  background-color: #fafafa;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 6px 6px 7px 0 rgb(0 0 0 / 20%);
+}
+
+.container-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 50px 30px;
+  }
+}

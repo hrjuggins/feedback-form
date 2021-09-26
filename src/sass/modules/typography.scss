@@ -1,0 +1,20 @@
+// Using raleway as closest available on google fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #4b494b;
+}
+
+p {
+  font-weight: 400;
+  margin: 0.625rem 0;
+  color: #abaaab;
+}

@@ -1,0 +1,26 @@
+.rating-container {
+  display: flex;
+  flex-direction: row-reverse;
+  input[type="radio"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+  }
+  .star-icon {
+    width: calc(100% / 5);
+    text-align: center;
+    &:hover svg {
+      color: #30af5f !important;
+      transition: all 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    &:hover ~ .star-icon svg {
+      color: #30af5f !important;
+      transition: all 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+}

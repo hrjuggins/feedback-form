@@ -1,0 +1,38 @@
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  button {
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 15px 45px;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    &:disabled:hover {
+      cursor: initial;
+      background-color: #fff;
+    }
+    &:hover {
+      background-color: #30af5f;
+      color: white;
+    }
+  }
+
+  input,
+  textarea {
+    width: calc(100% - 20px);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #e7e7e7;
+    font-family: "Montserrat", sans-serif;
+    &:focus-visible {
+      border: 1px solid #30af5f;
+      outline: none;
+    }
+  }
+}
