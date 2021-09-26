@@ -13,19 +13,17 @@ const StarRating: React.FC<IStarRating> = ({
         const adjustedValue = i + 1;
         return (
           <div key={`rating-${adjustedValue}`}>
-            <label htmlFor={`rating-${adjustedValue}`}>
-              <input
-                id={`rating-${adjustedValue}`}
-                type="radio"
-                name="rating"
-                onChange={(e) => setRating(e)}
-                value={adjustedValue}
-                // eslint-disable-next-line eqeqeq
-                checked={adjustedValue == ratingValue}
-                required
-                data-testid={`rating-input-${adjustedValue}`}
-              />
-            </label>
+            <input
+              aria-label={`rating-${adjustedValue}`}
+              type="radio"
+              name="rating"
+              onChange={(e) => setRating(e)}
+              value={adjustedValue}
+              // eslint-disable-next-line eqeqeq
+              checked={adjustedValue == ratingValue}
+              required
+              data-testid={`rating-input-${adjustedValue}`}
+            />
             <FaStar color={adjustedValue <= ratingValue ? "#01af93" : "#bbb"} />
           </div>
         );

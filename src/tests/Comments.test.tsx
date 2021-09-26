@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Comments from "../Comments";
+import Comments from "../components/Comments";
 import "@testing-library/jest-dom/extend-expect";
 
 const data = [

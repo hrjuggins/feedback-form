@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import FeedbackForm from "../FeedbackForm";
+import FeedbackForm from "../components/FeedbackForm";
 import "@testing-library/jest-dom/extend-expect";
 
 describe("Name input", () => {
