@@ -20,6 +20,8 @@ const FeedbackForm: React.FC<IFeedbackFormProps> = ({
     }));
   };
 
+  console.log(formData);
+
   const handleFormSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     setFormData({

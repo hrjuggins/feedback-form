@@ -4,11 +4,18 @@ import Comment from "./Comment";
 
 const Comments: React.FC<IComments> = ({ comments }: IComments) => (
   <div data-testid="comments" className="comments-container">
-    <h2>Comments</h2>
+    <h2>Latest Comments</h2>
     <div className="comments-list">
-      {comments.map((item: IComment) => (
-        <Comment key={item.name} name={item.name} message={item.message} />
-      ))}
+      {comments
+        .map((item: IComment) => (
+          <Comment
+            key={item.name}
+            name={item.name}
+            rating={item.rating}
+            message={item.message}
+          />
+        ))
+        .reverse()}
     </div>
   </div>
 );

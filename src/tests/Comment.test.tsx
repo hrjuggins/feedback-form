@@ -5,12 +5,13 @@ import Comment from "../components/Comment";
 const data = {
   name: "Janey",
   message: "morbi vestibulum velit",
+  rating: 5,
 };
 
 describe("Comment", () => {
   it("Should render the correct comment data", async () => {
-    const { name, message } = data;
-    render(<Comment name={name} message={message} />);
+    const { name, message, rating } = data;
+    render(<Comment name={name} rating={rating} message={message} />);
 
     expect(screen.getByTestId("name").textContent).toBe("Janey");
     expect(screen.getByTestId("message").textContent).toBe(

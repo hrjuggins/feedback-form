@@ -39,7 +39,7 @@ const TrendGraph: React.FC<IFeedbackList> = ({
         stroke="slateblue"
         dot={false}
       />
-      <Legend verticalAlign="bottom" height={36} />
+      <Legend verticalAlign="bottom" />
     </LineChart>
   );
 };

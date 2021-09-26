@@ -15,11 +15,11 @@
     width: calc(100% / 5);
     text-align: center;
     &:hover svg {
-      color: #30af5f !important;
+      color: #fdc830 !important;
       transition: all 3s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     &:hover ~ .star-icon svg {
-      color: #30af5f !important;
+      color: #fdc830 !important;
       transition: all 3s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
   }

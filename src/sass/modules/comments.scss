@@ -1,9 +1,19 @@
 .comments-container {
   height: 200px;
   overflow: hidden;
-
   .comments-list {
     overflow: scroll;
     height: 100%;
+    // display: flex;
+    // flex-direction: column-reverse;
+    .comment {
+      p:first-of-type {
+        span {
+          margin-right: 10px;
+          font-size: 0.9rem;
+          color: #abaaab;
+        }
+      }
+    }
   }
 }

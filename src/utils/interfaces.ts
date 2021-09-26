@@ -15,6 +15,7 @@ export interface IFeedbackFormProps {
 
 export interface IComment {
   name: string;
+  rating: number;
   message: string;
 }
 

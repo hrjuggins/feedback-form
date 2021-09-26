@@ -16,8 +16,9 @@ const StarRating: React.FC<IStarRating> = ({
           key={`rating-${adjustedValue}`}
           className="star-icon"
         >
-          <FaStar color={adjustedValue <= ratingValue ? "#30af5f" : "#bbb"} />
+          <FaStar color={adjustedValue <= ratingValue ? "#fdc830" : "#bbb"} />
           <input
+            id={`rating-${adjustedValue}`}
             aria-label={`rating-${adjustedValue}`}
             type="radio"
             name="rating"

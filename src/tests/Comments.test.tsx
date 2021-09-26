@@ -7,14 +7,17 @@ const data = [
   {
     name: "Janey",
     message: "morbi vestibulum velit",
+    rating: 5,
   },
   {
     name: "Whitney",
     message: "sapien arcu sed augue aliquam",
+    rating: 4,
   },
   {
     name: "Allen",
     message: "luctus rutrum nulla tellus",
+    rating: 3,
   },
 ];
 
