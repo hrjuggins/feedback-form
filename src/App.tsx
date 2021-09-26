@@ -3,21 +3,22 @@ import Comments from "./components/Comments";
 import FeedbackForm from "./components/FeedbackForm";
 import TrendGraph from "./components/TrendGraph";
 import initialData from "./utils/initialData";
-import { IComment } from "./utils/interfaces";
+import { IFeedback } from "./utils/interfaces";
 
 const App: React.FC = () => {
-  const [comments, setComments] = useState<IComment[]>(initialData);
+  const [feedbackList, setFeedbackList] = useState<IFeedback[]>(initialData);
 
-  const addComment = (data: IComment) => {
-    setComments((prev) => [...prev, data]);
+  const addFeedback = (data: IFeedback) => {
+    setFeedbackList((prev) => [...prev, data]);
   };
 
   return (
-    <div className="container">
-      <FeedbackForm addComment={(data: IComment) => addComment(data)} />
-      <TrendGraph comments={comments} />
-      <Comments comments={comments} />
-    </div>
+    <main className="container">
+      <h1>Customer Feedback Form</h1>
+      <FeedbackForm addFeedback={(data: IFeedback) => addFeedback(data)} />
+      <TrendGraph feedbackList={feedbackList} />
+      <Comments comments={feedbackList} />
+    </main>
   );
 };
 

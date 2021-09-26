@@ -3,13 +3,13 @@ import { IFeedbackFormProps } from "../utils/interfaces";
 import StarRating from "./StarRating";
 
 const FeedbackForm: React.FC<IFeedbackFormProps> = ({
-  addComment,
+  addFeedback,
 }: IFeedbackFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     rating: 0,
-    comment: "",
+    message: "",
   });
 
   const handleFormInput = (e: React.SyntheticEvent) => {
@@ -26,13 +26,13 @@ const FeedbackForm: React.FC<IFeedbackFormProps> = ({
       name: "",
       email: "",
       rating: 0,
-      comment: "",
+      message: "",
     });
-    addComment(formData);
+    addFeedback(formData);
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit} data-testid="form">
       <label htmlFor="name">
         Name
         <input
@@ -42,6 +42,7 @@ const FeedbackForm: React.FC<IFeedbackFormProps> = ({
           value={formData.name}
           onChange={(e) => handleFormInput(e)}
           required
+          data-testid="name-input"
         />
       </label>
       <label htmlFor="email">
@@ -53,24 +54,28 @@ const FeedbackForm: React.FC<IFeedbackFormProps> = ({
           value={formData.email}
           onChange={(e) => handleFormInput(e)}
           required
+          data-testid="email-input"
         />
       </label>
       <StarRating
         setRating={(e: React.SyntheticEvent) => handleFormInput(e)}
         ratingValue={formData.rating}
       />
-      <label htmlFor="comment">
+      <label htmlFor="message">
         Comment
         <input
-          id="comment"
+          id="message"
           type="textarea"
-          name="comment"
-          value={formData.comment}
+          name="message"
+          value={formData.message}
           onChange={(e) => handleFormInput(e)}
           required
+          data-testid="message-input"
         />
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit" data-testid="form-submit">
+        Submit
+      </button>
     </form>
   );
 };

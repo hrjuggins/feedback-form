@@ -1,0 +1,9 @@
+{
+  "testPathIgnorePatterns": ["<rootDir>/cypress/"],
+  "transform": {
+    "^.+\\.js$": "babel-jest",
+    "^.+\\.jsx$": "babel-jest",
+    "^.+\\.ts$": "babel-jest",
+    "^.+\\.tsx$": "babel-jest"
+  }
+}

@@ -2,10 +2,11 @@
   "extends": [
     "react-app",
     "airbnb",
-    "plugin:jsx-a11y/strict",
+    "plugin:jsx-a11y/recommended",
     "prettier",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:cypress/recommended"
   ],
   "plugins": ["jsx-a11y", "prettier"],
   "rules": {

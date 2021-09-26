@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  dev:
+    container_name: feedback-form
+    image: feedback-form
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 3000:3000
+
+  test:
+    container_name: feedback-form-test-unit
+    build:
+      context: .
+    environment:
+      - CI=true
+    command: npm run test:unit
