@@ -13,9 +13,9 @@ services:
       - 3000:3000
 
   test:
-    container_name: feedback-form-test-unit
+    container_name: feedback-form-test
     build:
       context: .
     environment:
       - CI=true
-    command: npm run test:unit
+    command: npm run test
