@@ -14,6 +14,7 @@ const sma = (arr: number[], period: number): number[] => {
       avgs.push(avgGroup);
     }
   }
+
   return avgs;
 };
 

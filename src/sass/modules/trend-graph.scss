@@ -1,8 +1,11 @@
-recharts-layer recharts-cartesian-axis recharts-yAxis yAxis {
-}
-
 .recharts-cartesian-axis-line,
 .recharts-cartesian-axis-tick-line {
   stroke: #e7e7e7;
   fill: none;
+}
+
+@media (max-width: 600px) {
+  .recharts-wrapper {
+    margin: 2rem 0;
+  }
 }

@@ -8,7 +8,7 @@ const StarRating: React.FC<IStarRating> = ({
 }: IStarRating) => {
   const renderStars = () => {
     const stars = [];
-    for (let i = 5; i >= 0; i -= 1) {
+    for (let i = 4; i >= 0; i -= 1) {
       const adjustedValue = i + 1;
       stars.push(
         <label
@@ -23,6 +23,7 @@ const StarRating: React.FC<IStarRating> = ({
             type="radio"
             name="rating"
             onChange={(e) => setRating(e)}
+            // eslint-disable-next-line radix
             value={adjustedValue}
             // eslint-disable-next-line eqeqeq
             checked={adjustedValue == ratingValue}

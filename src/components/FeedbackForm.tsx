@@ -14,13 +14,12 @@ const FeedbackForm: React.FC<IFeedbackFormProps> = ({
 
   const handleFormInput = (e: React.SyntheticEvent) => {
     const target = e.target as HTMLInputElement;
-    setFormData((prev) => ({
-      ...prev,
-      [target.name]: target.value,
-    }));
+    setFormData({
+      ...formData,
+      [target.name]:
+        target.name === "rating" ? parseInt(target.value, 10) : target.value,
+    });
   };
-
-  console.log(formData);
 
   const handleFormSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();

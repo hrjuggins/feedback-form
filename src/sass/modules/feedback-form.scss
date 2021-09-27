@@ -1,10 +1,7 @@
 .feedback-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-
   button {
-    margin-top: 10px;
     background-color: #fff;
     padding: 15px 45px;
     border: 1px solid #e7e7e7;
@@ -30,6 +27,7 @@
     border-radius: 5px;
     border: 1px solid #e7e7e7;
     font-family: "Montserrat", sans-serif;
+    margin-bottom: 1rem;
     &:focus-visible {
       border: 1px solid #30af5f;
       outline: none;

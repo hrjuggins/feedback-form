@@ -17,6 +17,7 @@ export interface IComment {
   name: string;
   rating: number;
   message: string;
+  [key: string]: any;
 }
 
 export interface IComments {

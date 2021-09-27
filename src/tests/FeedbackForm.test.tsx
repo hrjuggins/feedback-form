@@ -1,16 +1,16 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import FeedbackForm from "../components/FeedbackForm";
 import "@testing-library/jest-dom/extend-expect";
 
 describe("Name input", () => {
   it("Should capture name correctly onChange", () => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const addFeedback = jest.fn((value) => {});
+    const addFeedback = jest.fn();
     render(<FeedbackForm addFeedback={addFeedback} />);
 
-    const input = screen.getByTestId("name-input");
-    fireEvent.change(input, { target: { value: "Harry" } });
+    fireEvent.change(screen.getByTestId("name-input"), {
+      target: { value: "Harry" },
+    });
 
     expect(screen.getByTestId("name-input")).toHaveValue("Harry");
   });
@@ -18,12 +18,12 @@ describe("Name input", () => {
 
 describe("Email input", () => {
   it("Should capture email correctly onChange", () => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const addFeedback = jest.fn((value) => {});
+    const addFeedback = jest.fn();
     render(<FeedbackForm addFeedback={addFeedback} />);
 
-    const input = screen.getByTestId("email-input");
-    fireEvent.change(input, { target: { value: "harry@test.com" } });
+    fireEvent.change(screen.getByTestId("email-input"), {
+      target: { value: "harry@test.com" },
+    });
 
     expect(screen.getByTestId("email-input")).toHaveValue("harry@test.com");
   });
@@ -31,12 +31,12 @@ describe("Email input", () => {
 
 describe("Message input", () => {
   it("Should capture comment correctly onChange", () => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const addFeedback = jest.fn((value) => {});
+    const addFeedback = jest.fn();
     render(<FeedbackForm addFeedback={addFeedback} />);
 
-    const input = screen.getByTestId("message-input");
-    fireEvent.change(input, { target: { value: "Leaving feedback" } });
+    fireEvent.change(screen.getByTestId("message-input"), {
+      target: { value: "Leaving feedback" },
+    });
 
     expect(screen.getByTestId("message-input")).toHaveValue("Leaving feedback");
   });
@@ -44,23 +44,42 @@ describe("Message input", () => {
 
 describe("Rating input", () => {
   it("Should capture rating correctly onChange", () => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const addFeedback = jest.fn((value) => {});
+    const addFeedback = jest.fn();
     render(<FeedbackForm addFeedback={addFeedback} />);
 
-    const input = screen.getByTestId("rating-input-5");
-    fireEvent.click(input);
+    fireEvent.click(screen.getByTestId("rating-input-5"));
 
     expect(screen.getByTestId("rating-input-5")).toBeChecked();
   });
 });
 
-describe("Form submit", () => {
-  it("Should submit the form", () => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const addFeedback = jest.fn((value) => {});
+describe("Submit feedback form", () => {
+  it("Should submit the feedback form with the correct data", async () => {
+    const addFeedback = jest.fn();
     render(<FeedbackForm addFeedback={addFeedback} />);
+
+    fireEvent.change(screen.getByTestId("name-input"), {
+      target: { value: "Harry" },
+    });
+    fireEvent.change(screen.getByTestId("email-input"), {
+      target: { value: "harry@test.com" },
+    });
+    fireEvent.click(screen.getByTestId("rating-input-5"));
+    fireEvent.change(screen.getByTestId("message-input"), {
+      target: { value: "Leaving feedback" },
+    });
+
     fireEvent.submit(screen.getByTestId("form"));
-    expect(addFeedback).toHaveBeenCalled();
+
+    await waitFor(() => expect(addFeedback).toHaveBeenCalled());
+
+    await waitFor(() =>
+      expect(addFeedback).toHaveBeenCalledWith({
+        name: "Harry",
+        email: "harry@test.com",
+        rating: 5,
+        message: "Leaving feedback",
+      })
+    );
   });
 });

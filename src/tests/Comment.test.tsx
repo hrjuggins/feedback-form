@@ -9,7 +9,7 @@ const data = {
 };
 
 describe("Comment", () => {
-  it("Should render the correct comment data", async () => {
+  it("Should render the comment data", async () => {
     const { name, message, rating } = data;
     render(<Comment name={name} rating={rating} message={message} />);
 
