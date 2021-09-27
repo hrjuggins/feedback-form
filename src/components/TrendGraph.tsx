@@ -19,7 +19,7 @@ const TrendGraph: React.FC<IFeedbackList> = ({
   const smaFeedbackList = sma(ratings, 4);
   const chartData = [];
 
-  for (let i = 0; i < ratings.length - 1; i += 1) {
+  for (let i = 0; i < ratings.length; i += 1) {
     chartData.push({ rating: ratings[i], sma: smaFeedbackList[i] });
   }
 
