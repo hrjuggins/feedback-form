@@ -8,6 +8,8 @@
 
 <a align="center" href="https://hub.docker.com/r/hrjuggins/feedback-form">Docker hub</a>
 
+## How to use
+
 ### `npm run start`
 
 Runs the app in the development mode.\
