@@ -4,7 +4,7 @@
 
 <a align="center" href="https://optimistic-swartz-1c0251.netlify.app/">Live app</a>
 
-## View on docker hub 🐳
+## View on docker hub
 
 <a align="center" href="https://hub.docker.com/r/hrjuggins/feedback-form">Docker hub</a>
 
